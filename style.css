@@ -1,0 +1,256 @@
+/* 전체 여백 초기화 및 기본 폰트 설정 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 페이지 전체 배경 및 패딩 설정 */
+body {
+  background-color: #f4f6f9;
+  color: #333333;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 중앙 정렬 컨테이너 반응형 최대 너비 설정 */
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 제목 및 설명 헤더 영역 */
+header {
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* 서비스 메인 타이틀 */
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+/* 서비스 서브 설명 텍스트 */
+header p {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+/* 컨트롤 바(시도 선택 드롭다운) 스타일 */
+.control-panel {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 드롭다운 라벨 */
+.control-panel label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #334155;
+}
+
+/* 시도 선택 셀렉트 박스 */
+.control-panel select {
+  flex: 1;
+  min-width: 160px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* 시도 선택 셀렉트 포커스 효과 */
+.control-panel select:focus {
+  border-color: #3b82f6;
+}
+
+/* 지역 평균 미세먼지 수치 대시보드 카드 */
+.average-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+/* 평균 미세먼지 제목 */
+.average-card h2 {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+/* 큰 숫자로 강조된 평균 수치 */
+.average-value {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+
+/* 미세먼지 단위 표시 */
+.average-unit {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-left: 4px;
+}
+
+/* 평균 상태 뱃지 텍스트 */
+.average-status {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #94a3b8;
+}
+
+/* 측정소 목록 카드 그리드 레이아웃 */
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* 개별 측정소 카드 공통 디자인 */
+.station-card {
+  border-radius: 14px;
+  padding: 18px 20px;
+  color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 카드 호버 인터랙션 */
+.station-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+/* 등급 1: 좋음 (파랑) */
+.grade-1 {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+/* 등급 2: 보통 (초록) */
+.grade-2 {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+}
+
+/* 등급 3: 나쁨 (주황) */
+.grade-3 {
+  background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+}
+
+/* 등급 4: 매우나쁨 (빨강) */
+.grade-4 {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+}
+
+/* 등급 없음 / 결측치 (회색) */
+.grade-null {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+}
+
+/* 카드 상단: 측정소 이름 및 등급 라벨 */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 8px;
+}
+
+/* 측정소 명칭 스타일 */
+.station-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* 등급 뱃지 텍스트 */
+.grade-badge {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* 측정 정보 수치 표시 본문 */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* 각 측정 항목 행 스타일 */
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+/* 측정 항목 레이블 */
+.metric-label {
+  opacity: 0.9;
+}
+
+/* 측정 항목 값 */
+.metric-value {
+  font-weight: 700;
+}
+
+/* 카드 하단 측정 시각 */
+.card-footer {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  text-align: right;
+}
+
+/* 안내 메시지 및 로딩 표시 영역 */
+.info-message {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* 모바일 작은 화면 대응 미디어 쿼리 */
+@media (max-width: 480px) {
+  .average-value {
+    font-size: 2.5rem;
+  }
+  .control-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+

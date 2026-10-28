@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- 한국어 문서 선언 -->
+<html lang="ko">
+<head>
+  <!-- 문자 인코딩 설정 (UTF-8) -->
+  <meta charset="UTF-8">
+  <!-- 모바일 및 다양한 기기를 위한 반응형 뷰포트 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 웹 애플리케이션 제목 -->
+  <title>실시간 대기오염 정보 조회</title>
+  <!-- 분리된 외부 CSS 파일 연결 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 화면 전체 컨테이너 -->
+  <div class="container">
+    <!-- 헤더 영역 -->
+    <header>
+      <!-- 웹앱 타이틀 -->
+      <h1>에어코리아 대기오염정보 실시간 조회</h1>
+      <!-- 안내 텍스트 -->
+      <p>원하는 지역을 선택하여 미세먼지 및 대기오염 상태를 확인하세요.</p>
+    </header>
+
+    <!-- 시도 선택 컨트롤 패널 -->
+    <section class="control-panel">
+      <!-- 시도 드롭다운 라벨 -->
+      <label for="sidoSelect">조회 지역 선택</label>
+      <!-- 18개 시도 선택 드롭다운 목록 -->
+      <select id="sidoSelect">
+        <option value="전국">전국</option>
+        <option value="서울" selected>서울</option>
+        <option value="부산">부산</option>
+        <option value="대구">대구</option>
+        <option value="인천">인천</option>
+        <option value="광주">광주</option>
+        <option value="대전">대전</option>
+        <option value="울산">울산</option>
+        <option value="세종">세종</option>
+        <option value="경기">경기</option>
+        <option value="강원">강원</option>
+        <option value="충북">충북</option>
+        <option value="충남">충남</option>
+        <option value="전북">전북</option>
+        <option value="전남">전남</option>
+        <option value="경북">경북</option>
+        <option value="경남">경남</option>
+        <option value="제주">제주</option>
+      </select>
+    </section>
+
+    <!-- 선택 지역 평균 미세먼지 대시보드 영역 -->
+    <section class="average-card">
+      <!-- 평균 수치 영역 타이틀 -->
+      <h2 id="averageTitle">서울 평균 미세먼지(PM10)</h2>
+      <!-- 큰 숫자로 표시되는 평균값 -->
+      <div>
+        <span class="average-value" id="averageValue">-</span>
+        <span class="average-unit">㎍/㎥</span>
+      </div>
+      <!-- 대기질 종합 상태 텍스트 뱃지 -->
+      <div>
+        <span class="average-status" id="averageStatus">데이터 조회 중</span>
+      </div>
+    </section>
+
+    <!-- 측정소 카드 목록이 렌더링될 영역 -->
+    <main class="station-grid" id="stationGrid">
+      <!-- 안내 또는 로딩 메시지 -->
+      <div class="info-message">데이터를 불러오는 중입니다...</div>
+    </main>
+  </div>
+
+  <!-- 분리된 외부 자바스크립트 파일 연결 -->
+  <script src="script.js"></script>
+</body>
+</html>
